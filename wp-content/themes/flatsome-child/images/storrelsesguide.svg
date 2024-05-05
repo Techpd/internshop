@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M246,1037 C241.5888,1037 238,1033.4112 238,1029 C238,1024.5888 241.5888,1021 246,1021 C250.4112,1021 254,1024.5888 254,1029 C254,1033.4112 250.4112,1037 246,1037 M246,1023 C242.69175,1023 240,1025.69175 240,1029 C240,1032.30825 242.69175,1035 246,1035 C249.30825,1035 252,1032.30825 252,1029 C252,1025.69175 249.30825,1023 246,1023 M246,1032 C245.448,1032 245,1031.702 245,1031.33333 L245,1028.66667 C245,1028.298 245.448,1028 246,1028 C246.552,1028 247,1028.298 247,1028.66667 L247,1031.33333 C247,1031.702 246.552,1032 246,1032 M247,1026 C247,1026.553 246.552,1027 246,1027 C245.448,1027 245,1026.553 245,1026 C245,1025.447 245.448,1025 246,1025 C246.552,1025 247,1025.447 247,1026" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Produktside" transform="translate(-238.000000, -1021.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Icon" fill="#E40E62" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

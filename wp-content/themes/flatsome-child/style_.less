@@ -1,0 +1,381 @@
+// out: style.css
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+.hide() {
+	display: none;
+}
+
+@black: #232323;
+
+.product-small {
+	.col-inner {
+		border: 1px solid #f1f1f1;
+		height: 100%; //TODO mobile width sensitive
+		.product-small.box {
+			padding: .5em 1em;
+			.box-text { padding-bottom: 0.7em; }
+			.box-text-products:before {
+				content: ' ';
+		    width: 3rem;
+		    height: 1px;
+		    background: #f1f1f1;
+		    display: block;
+		    margin: auto;
+		    margin-bottom: .5em;
+			}
+		}
+	}
+}
+
+.newwave-product-badge {
+	margin-top: 2em;
+  margin-left: -.5em;
+	&.date .badge-inner {
+		background: #e24b55; //orange/red
+		// background: #5CAFEC; //blue
+	}
+	&.expired .badge-inner {
+		background: @black;
+	}
+
+	.badge-inner {
+    text-transform: uppercase;
+		@media (max-width: 699px) {
+			font-size: 0.65rem;
+		}
+	}
+}
+
+.newwave-product-notice {
+	color: black;
+	&.date{
+		// background: #e24b55;
+		// background: #e24b55;
+		background: #d9edf9;
+	}
+	&.expired {
+		background: #ececec;
+	}
+}
+
+.product-small.expired {
+	opacity:0.7;
+	img {
+		-webkit-filter: grayscale(20%);
+		filter: grayscale(20%);
+	}
+}
+
+div.quantity input,
+.form-flat select {
+	border-radius: 0 !important;
+  background-color: white !important;
+  // border: 1px solid black;
+}
+
+button.single_add_to_cart_button {
+	// background: @black !important;
+	border-radius: 0 !important;
+}
+
+
+
+.craft-hide-header {
+	.hide();
+}
+
+.craft-hide-header-menu-items .flex-col:not(.logo) {
+	.hide();
+}
+
+.message-wrapper {
+	margin-bottom: 0;
+	.message-container {
+		padding: 1em;
+		background-color: #c2def3;
+		&.success-color { background-color: #dbffc9; }
+		&.alert-color { background-color: #ffd2d5; }
+	}
+}
+
+body.home {
+	.message-wrapper {
+		position: static;
+		margin-top: 0;
+	}
+}
+
+.craft-underline {
+	width: 100%;
+	h2 { margin-bottom: .1em; }
+	margin-bottom: 1em;
+	border-bottom: 1px solid #908e8e;
+	// border-bottom: 2px solid #908e8e;
+}
+
+form.craft-login {
+	p.lost_password {
+		text-align: center;
+		margin-top: 1em;
+	}
+}
+
+form.craft-register {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	p {
+		width: ~"calc(50% - .5rem)";
+		&.craft-wide {
+			width: 100%;
+		}
+	}
+}
+
+.craft-flex {
+	display: flex;
+}
+.craft-flex-center {
+	justify-content: center;
+}
+.craft-width-third {
+	width: 33.3%;
+	margin: 0 .5em;
+}
+.craft-text-center {
+	text-align: center;
+}
+
+
+
+@media (max-width: 849px) {
+	.touch-scroll-table {
+		box-shadow: inset -2px 0px 18px -5px rgba(0,0,0,0.2);
+	}
+
+	nav.woocommerce-MyAccount-navigation {
+		display: none;
+	}
+	.woocommerce-MyAccount-content {
+		text-align: center;
+		.woocommerce-button {
+			margin-top: 1rem;
+		}
+	}
+}
+@media (min-width: 850px) {
+.woocommerce-account .large-12.col .woocommerce {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	.message-wrapper {
+		width: 100%;
+	}
+		nav.woocommerce-MyAccount-navigation {
+			min-width: 200px; //TODO should only be on large screens
+			padding-right: 1em;
+			ul {
+				height: 100%;
+				list-style: none;
+				padding-right: 1em;
+				border-right: 1px solid #ececec;
+				li {
+					position: relative;
+					text-transform: uppercase;
+					line-height: 1.05;
+			    letter-spacing: .05em;
+					font-size: .9em;
+					font-weight: 700;
+					margin-bottom: 1.1em;
+					a {
+						position: relative;
+						display: block;
+						transition: all .2s;
+						color: #888888;
+						&:hover { color: @black; }
+					}
+					&.active a { color: @black; }
+					&.active:after {
+						content: " ";
+				    position: absolute;
+						height: 3px;
+						width: 100%;
+						background: @black;
+						transition: all .2s;
+						margin-top: 2px;
+					}
+				}
+			}
+		}
+		.woocommerce-MyAccount-content {
+			width: ~"calc(100% - 200px)";
+			ul.dashboard-links { .hide(); }
+		}
+	}
+}
+
+
+
+#craft-banner {
+	width: 100%;
+  height: 25vh;
+	max-height: 250px;
+	min-height: 200px;
+
+	background-size: cover;
+	background-position: top center;
+
+	#craft-banner-overlay {
+		width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.3);
+
+		#craft-banner-inside {
+			display: flex;
+	    height: 100%;
+	    max-width: 1080px;
+	    width: 100%;
+	    padding: 20px;
+
+			@media (min-width: 850px) {
+				padding: 30px 15px;
+			}
+
+			#club-emblem {
+				height: 100%;
+		    width: auto;
+				min-width: 170px;
+		    background: white;
+		    display: flex;
+		    flex-direction: column;
+		    padding: 1rem;
+				margin: auto;
+
+				@media (min-width: 850px) {
+					margin-left: 10px;
+				}
+
+				-webkit-clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0% 100%, 0 10%, 10% 0);
+				clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0% 100%, 0 10%, 10% 0);
+
+				#club-logo {
+					width: 100%;
+			    height: 100%;
+			    background-size: contain;
+			    background-repeat: no-repeat;
+			    background-position: center;
+				}
+				h3 {
+					text-align: center;
+					// color: black;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+
+
+.woocommerce-billing-fields__field-wrapper > p {
+	display: flex;
+	width: 100%;
+	label:first-child {
+		flex: 1;
+	}
+}
+
+.woocommerce-shipping-fields { .hide(); }
+.woocommerce-additional-fields { .hide(); }
+
+/*  ----- Checkout address selection ----- */
+.newwave-shipping-address-box {
+	border: 2px solid #e1e2e1;
+	&.selected {
+		border: 2px solid black;
+	}
+	&.incomplete-address {
+		color: #c51e1e;
+	}
+}
+
+#craft-campaign-banner {
+	width: 100%;
+	height: 140px;
+	background-image: url(http://localhost:8888/wp-content/uploads/2018/01/sykling2.jpg);
+	background-size: cover;
+	margin-bottom: 1.5rem;
+}
+
+
+.badge {
+	height: auto;
+	.badge-inner.secondary.on-sale {
+		padding: .7em .5rem;
+		font-size: 0.85rem;
+		border-radius: 0px;
+		text-transform: uppercase;
+	}
+}
+
+/*  ----- Page navigation ----- */
+.nav-pagination>li>span, .nav-pagination>li>a {
+	border-radius: 0px;
+}
+
+/*  ----- Scale product images on archive pages ----- */
+.product-small {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	.box-image a {
+		display: flex !important;
+		// width: 200px;
+		// height: 250px;
+		height: 230px;
+		@media (max-width: 850px) {
+			height: 185px;
+		}
+		@media (max-width: 550px) {
+			height: 160px;
+		}
+
+		img {
+			object-fit: contain;
+			font-family: 'object-fit: contain;';
+			// width: auto;
+			// width: auto !important;
+			// height: auto !important;
+			max-height: 230px;
+			@media (max-width: 850px) {
+				max-height: 185px;
+			}
+			@media (max-width: 550px) {
+				max-height: 160px;
+			}
+		}
+	}
+}
+
+// .product-gallery-slider img {
+// 	width: auto;
+//   max-height: 600px;
+// }
+
+// .product-gallery-slider {
+// 	max-height: 600px;
+// }
+//
+// .easyzoom-flyout {
+// 	width: auto !important;
+// 	max-height: 600px !important;
+// }

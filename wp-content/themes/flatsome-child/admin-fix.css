@@ -1,0 +1,32 @@
+
+#posts-filter table.wp-list-table .column-product_cat, 
+#posts-filter table.wp-list-table .column-product_tag{
+  width: auto !important;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  display: inline-block !important;
+}
+
+.variable_pricing p:nth-child(4) label {
+  float: left;
+  clear: both;
+}
+
+
+#posts-filter table.wp-list-table thead tr th.column-name{
+  width: 15%;
+
+}
+#posts-filter table.wp-list-table thead tr th#taxonomy-giftcard-category{
+  width: 5%;
+}
+#posts-filter table.wp-list-table thead tr th.column-date {
+  width: 7%;
+}
+#posts-filter table.wp-list-table thead tr th.column-sku {
+  width: 6%;
+}
+#posts-filter table.wp-list-table thead tr th.column-is_in_stock  {
+  width: 48px;
+}

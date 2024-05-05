@@ -1,0 +1,597 @@
+// out: style.css
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+.hide() {
+	display: none;
+}
+
+@black: #232323;
+
+.product-small {
+	.col-inner {
+		border: 1px solid #f1f1f1;
+		height: 100%; //TODO mobile width sensitive
+		.product-small.box {
+			padding: .5em 1em;
+			.box-text { padding-bottom: 0.7em; }
+			.box-text-products:before {
+				content: ' ';
+				width: 3rem;
+				height: 1px;
+				background: #f1f1f1;
+				display: block;
+				margin: auto;
+				margin-bottom: .5em;
+			}
+		}
+	}
+}
+
+.newwave-product-badge {
+	margin-top: 2em;
+	margin-left: -.5em;
+	&.date .badge-inner {
+		background: #e24b55; //orange/red
+		// background: #5CAFEC; //blue
+	}
+	&.expired .badge-inner {
+		background: @black;
+	}
+
+	.badge-inner {
+		text-transform: uppercase;
+		@media (max-width: 699px) {
+			font-size: 0.65rem;
+		}
+	}
+}
+
+.newwave-product-notice {
+	color: black;
+	&.date{
+		// background: #e24b55;
+		// background: #e24b55;
+		background: #d9edf9;
+	}
+	&.expired {
+		background: #ececec;
+	}
+}
+
+.product-small.expired {
+	opacity:0.7;
+	img {
+		-webkit-filter: grayscale(20%);
+		filter: grayscale(20%);
+	}
+}
+
+div.quantity input,
+.form-flat select {
+	border-radius: 0 !important;
+	background-color: white !important;
+	// border: 1px solid black;
+}
+
+button.single_add_to_cart_button {
+	// background: @black !important;
+	border-radius: 0 !important;
+}
+
+
+
+.craft-hide-header {
+	.hide();
+}
+
+.craft-hide-header-menu-items .flex-col:not(.logo) {
+	.hide();
+}
+
+.message-wrapper {
+	margin-bottom: 0;
+	.message-container {
+		padding: 1em;
+		background-color: #c2def3;
+		&.success-color { background-color: #dbffc9; }
+		&.alert-color { background-color: #ffd2d5; }
+	}
+}
+
+body.home {
+	.message-wrapper {
+		position: static;
+		margin-top: 0;
+	}
+}
+
+.craft-underline {
+	width: 100%;
+	h2 { margin-bottom: .1em; }
+	margin-bottom: 1em;
+	border-bottom: 1px solid #908e8e;
+	// border-bottom: 2px solid #908e8e;
+}
+
+form.craft-login {
+	p.lost_password {
+		text-align: center;
+		margin-top: 1em;
+	}
+}
+
+form.craft-register {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	p {
+		width: ~"calc(50% - .5rem)";
+		&.craft-wide {
+			width: 100%;
+		}
+	}
+}
+
+.craft-flex {
+	display: flex;
+}
+.craft-flex-center {
+	justify-content: center;
+}
+.craft-width-third {
+	width: 33.3%;
+	margin: 0 .5em;
+}
+.craft-text-center {
+	text-align: center;
+}
+
+
+
+@media (max-width: 849px) {
+	.touch-scroll-table {
+		box-shadow: inset -2px 0px 18px -5px rgba(0,0,0,0.2);
+	}
+
+	nav.woocommerce-MyAccount-navigation {
+		display: none;
+	}
+	.woocommerce-MyAccount-content {
+		text-align: center;
+		.woocommerce-button {
+			margin-top: 1rem;
+		}
+	}
+}
+@media (min-width: 850px) {
+	.woocommerce-account .large-12.col .woocommerce {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.message-wrapper {
+			width: 100%;
+		}
+		nav.woocommerce-MyAccount-navigation {
+			min-width: 200px; //TODO should only be on large screens
+			padding-right: 1em;
+			ul {
+				height: 100%;
+				list-style: none;
+				padding-right: 1em;
+				border-right: 1px solid #ececec;
+				li {
+					position: relative;
+					text-transform: uppercase;
+					line-height: 1.05;
+					letter-spacing: .05em;
+					font-size: .9em;
+					font-weight: 700;
+					margin-bottom: 1.1em;
+					a {
+						position: relative;
+						display: block;
+						transition: all .2s;
+						color: #888888;
+						&:hover { color: @black; }
+					}
+					&.active a { color: @black; }
+					&.active:after {
+						content: " ";
+						position: absolute;
+						height: 3px;
+						width: 100%;
+						background: @black;
+						transition: all .2s;
+						margin-top: 2px;
+					}
+				}
+			}
+		}
+		.woocommerce-MyAccount-content {
+			width: ~"calc(100% - 200px)";
+			ul.dashboard-links { .hide(); }
+		}
+	}
+}
+
+
+
+#craft-banner {
+	width: 100%;
+	height: 25vh;
+	max-height: 250px;
+	min-height: 200px;
+
+	background-size: cover;
+	background-position: top center;
+
+	#craft-banner-overlay {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		background-color: rgba(255,255,255,0.3);
+
+		#craft-banner-inside {
+			display: flex;
+			height: 100%;
+			max-width: 1080px;
+			width: 100%;
+			padding: 20px;
+
+			@media (min-width: 850px) {
+				padding: 30px 15px;
+			}
+
+			#club-emblem {
+				height: 100%;
+				width: auto;
+				min-width: 170px;
+				background: white;
+				display: flex;
+				flex-direction: column;
+				padding: 1rem;
+				margin: auto;
+
+				@media (min-width: 850px) {
+					margin-left: 10px;
+				}
+
+				-webkit-clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0% 100%, 0 10%, 10% 0);
+				clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0% 100%, 0 10%, 10% 0);
+
+				#club-logo {
+					width: 100%;
+					height: 100%;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+				h3 {
+					text-align: center;
+					// color: black;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+
+
+.woocommerce-billing-fields__field-wrapper > p {
+	display: flex;
+	width: 100%;
+	label:first-child {
+		flex: 1;
+	}
+}
+
+.woocommerce-shipping-fields { .hide(); }
+.woocommerce-additional-fields { .hide(); }
+
+/*  ----- Checkout address selection ----- */
+.newwave-shipping-address-box {
+	border: 2px solid #e1e2e1;
+	&.selected {
+		border: 2px solid black;
+	}
+	&.incomplete-address {
+		color: #c51e1e;
+	}
+}
+
+#craft-campaign-banner {
+	width: 100%;
+	height: 140px;
+	background-image: url(http://localhost:8888/wp-content/uploads/2018/01/sykling2.jpg);
+	background-size: cover;
+	margin-bottom: 1.5rem;
+}
+
+
+.badge {
+	height: auto;
+	.badge-inner.secondary.on-sale {
+		padding: .7em .5rem;
+		font-size: 0.85rem;
+		border-radius: 0px;
+		text-transform: uppercase;
+	}
+}
+
+/*  ----- Page navigation ----- */
+.nav-pagination>li>span, .nav-pagination>li>a {
+	border-radius: 0px;
+}
+
+/*  ----- Scale product images on archive pages ----- */
+.product-small {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	.box-image a {
+		display: flex !important;
+		// width: 200px;
+		// height: 250px;
+		height: 230px;
+		@media (max-width: 850px) {
+			height: 185px;
+		}
+		@media (max-width: 550px) {
+			height: 160px;
+		}
+
+		img {
+			object-fit: contain;
+			font-family: 'object-fit: contain;';
+			// width: auto;
+			// width: auto !important;
+			// height: auto !important;
+			max-height: 230px;
+			@media (max-width: 850px) {
+				max-height: 185px;
+			}
+			@media (max-width: 550px) {
+				max-height: 160px;
+			}
+		}
+	}
+}
+
+// .product-gallery-slider img {
+	// 	width: auto;
+	//   max-height: 600px;
+	// }
+
+	// .product-gallery-slider {
+		// 	max-height: 600px;
+		// }
+		//
+		// .easyzoom-flyout {
+			// 	width: auto !important;
+			// 	max-height: 600px !important;
+			// }
+
+
+			// Klarna checkout styling
+			#kco-wrapper {
+
+				// Make 'Total' in cart-review larger
+				.order-total {
+					// Remove final bottom-border
+					th, td {
+						border-bottom: 0;
+					}
+					strong > .woocommerce-Price-amount.amount {
+						font-size: 1.4em;
+					}
+				}
+
+				// Add grey border around checkout components
+				.newwave-klarna-cart, .newwave-klarna-shipping-destination, .newwave-klarna-payment {
+					margin-bottom: 2rem;
+					border: 2px solid #eeefee;
+					padding: 1rem;
+				}
+
+				// Style shipping destination options
+				.newwave-klarna-shipping-destination {
+					.newwave-shipping-option {
+						display: flex;
+						padding-bottom: 1rem;
+						&, p, input, label { cursor: pointer; }
+						p { font-size: 14px; }
+					}
+				}
+
+				// To replace standard radiobuttons, hide them
+				/* input[name="nw_shipping_destination"] {
+					opacity: 0;
+				} */
+
+				// Style custom radio buttons
+				.craft-radio-button {
+					width: 20px;
+					height: 20px;
+					border: 2px solid #0A0505;
+					border-radius: 10px;
+					display: inline-block;
+					position: absolute;
+					cursor: pointer;
+				}
+
+				// Add checkmark to custom radio buttons that are next to a selected one
+				input[name="nw_shipping_destination"]:checked ~ .craft-radio-button:after {
+					content: "";
+					position: absolute;
+					top: 2px;
+					left: 5px;
+					width: 6px;
+					height: 10px;
+					border: solid #0A0505;
+					border-width: 0 3px 3px 0;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+
+				// Add number next to shipping-destination and payment (to symbolize the 2-step checkout process)
+				#newwave-klarna-shipping-destination-title, #newwave-klarna-payment-title {
+					&:before {
+						background: #0A0505;
+						height: 30px;
+						width: 30px;
+						display: inline-block;
+						color: white;
+						border-radius: 3rem;
+						text-align: center;
+						margin-right: 5px;
+					}
+				}
+				#newwave-klarna-shipping-destination-title:before {
+					content: '1';
+				}
+				#newwave-klarna-payment-title:before {
+					content: '2';
+				}
+			}
+
+
+
+			#footer{
+				.footer-widgets{
+					padding-top: 80px;
+					#text-5{
+						.textwidget{
+							p{
+								color: gray;
+								@media(max-width: 849px){
+									text-align: center;
+								}
+							}
+						}
+						@media(min-width: 850px){
+							padding-right: 0;
+						}
+					}
+					#nav_menu-5{
+						.menu-footermeny-container{
+							ul{
+								text-align: center;
+								li{
+									display: inline-block;
+									position: relative;
+									border: none;
+									&:before{
+										content:'';
+										position: absolute;
+										margin-right: 0;
+										height: 60%;
+										width: 2px;
+										top: 50%;
+										left: 0;
+										transform: translate(0,-50%);
+										background-color: white;
+										opacity: 1;
+									}
+									a{
+										padding: 0;
+										padding-left: 15px;
+										padding-right: 12px;
+										font-size: 17px;
+										font-family: 'Lato', sans-serif;
+										text-transform: capitalize;
+										line-height:30px!important;
+										@media(max-width: 1200px){
+											padding-left: 11px;
+											padding-right: 6px;
+											font-size: 14px;
+										}
+										@media(max-width: 849px){
+											padding-left: 15px;
+											padding-right: 12px;
+											font-size: 17px;
+											
+										}
+										@media(max-width: 480px){
+											padding-left: 11px;
+											padding-right: 6px;
+											font-size: 14px;
+										}
+									}
+									&:first-child:before{
+										background-color: transparent;
+									}
+								}
+								@media(max-width: 849px){
+									margin-bottom:15px;
+								}
+							}
+						}
+						@media(min-width: 850px){
+							padding-left: 0;
+							padding-right:0;
+						}
+					}
+
+					#custom_html-5{
+						text-align: right;
+						.widget-title{
+							color: gray;
+							font-size: 14px;
+							font-family: 'Lato', sans-serif;
+							text-transform: capitalize;
+							font-weight: 500!important;
+						}
+						.is-divider{display: none;}
+						.textwidget{
+							margin-top: 13px;
+							a{
+								font-size: 25px;
+								margin-left: 10px;
+								margin-right: 10px;
+							}
+						}
+						@media(max-width: 849px){
+							text-align:center;
+						}
+						@media(min-width: 850px){
+							padding-left: 0;
+						}
+					}
+				}
+				.widget{
+					@media(min-width: 850px){
+						margin-bottom: 0;
+					}
+				}
+			}
+			.footer-1, .footer-2{border: none;}
+			.absolute-footer{
+				margin-top: -2px;
+				.footer-primary{
+					width: 100%;
+					text-align: center!important;
+					.copyright-footer{
+						a{
+							border-bottom: 1px solid gray;
+						}
+					}
+				}
+
+			} 
+            
+            @media (max-width: 768px){                
+                form.craft-register p {
+                    width: 100%;
+                }
+            }            
