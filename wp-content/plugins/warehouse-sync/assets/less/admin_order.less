@@ -1,0 +1,28 @@
+// out: ../css/admin_order.css
+
+/* Custom order status icon for the status 'partially shipped' */
+// .widefat .column-order_status mark.partially-shipped::after {
+//   content: '\e01a';
+//   color: #f59844;
+//   font-family: WooCommerce;
+//   .icon-base();
+// }
+
+/* Swap colors for complete & processing status */
+.order-status.status-processing {
+    background: #c8d7e1;
+    color: #2e4453;
+}
+
+.order-status.status-completed {
+    background: #c6e1c6;
+    color: #5b841b;
+}
+.order-status.status-partially-shipped {
+    background: #efbd8e;
+    color: #79410c;
+}
+
+.bulk-increase-stock, .bulk-decrease-stock {
+    display: none !important;
+}

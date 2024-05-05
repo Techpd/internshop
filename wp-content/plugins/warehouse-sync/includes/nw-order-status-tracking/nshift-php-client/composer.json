@@ -1,0 +1,33 @@
+{
+    "name": "crakter/nshift-php-client",
+    "type": "library",
+    "description": "nShift php client is a fully functional library to help contact nShift API",
+    "version": "1.0.4",
+    "authors": [
+        {
+            "name": "Martin Madsen",
+            "email": "crakter@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "psr/log": "^1.1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=8.5.8",
+        "friendsofphp/php-cs-fixer": ">=2.16.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crakter\\nShift\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Crakter\\nShift\\": "tests/"
+        }
+    },
+    "license": "MIT"
+}

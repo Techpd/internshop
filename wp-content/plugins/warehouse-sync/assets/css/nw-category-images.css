@@ -1,0 +1,19 @@
+.nw-category-image-upload {
+    cursor: pointer;
+}
+
+.nw-category-image-upload.remove:hover::before {
+    content: '\f335';
+    font-family: Dashicons;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -2px;
+    font-size: 64px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nw-category-image .select2 {
+    margin-top: -22px;
+    margin-left: 20px;
+}

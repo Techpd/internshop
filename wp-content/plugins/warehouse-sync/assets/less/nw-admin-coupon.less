@@ -1,0 +1,38 @@
+// out: ../css/nw-admin-coupon.css
+
+.hide() {
+	display: none;
+}
+.show() {
+	display: block;
+}
+
+#general_coupon_data {
+	display: flex;
+	flex-direction: column;
+
+	p.form-field { order: 2; }
+	p.nw_coupon_type_field { order: 1; }
+	p.discount_type_field,
+	p.coupon_amount_field,
+	p.free_shipping_field {
+		.hide();
+	}
+}
+
+// #usage_restriction_coupon_data {
+// 	p.form-field { .hide(); }
+// 	p.customer_email_field,
+// 	p.minimum_amount_field,
+// 	p.maximum_amount_field {
+// 		.show();
+// 	}
+// 	div.options_group:nth-child(2),
+// 	div.options_group:nth-child(3) {
+// 		.hide();
+// 	}
+// }
+
+// #usage_limit_coupon_data {
+// 	p.limit_usage_to_x_items_field { .hide(); }
+// }
