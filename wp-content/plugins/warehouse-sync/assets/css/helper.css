@@ -1,0 +1,81 @@
+th.row .woocommerce-help-tip {
+  float: right;
+}
+.nwp-modal section.wc-backbone-modal-main {
+  padding-bottom: 5rem;
+}
+.nwp-modal section.wc-backbone-modal-main footer div.inner {
+  display: flex;
+  flex-direction: column;
+  float: none;
+}
+.nwp-modal .blockUI.blockMsg.blockElement {
+  border: 0 !important;
+  background: 0!important;
+}
+.nwp-hide-spinner:before {
+  background: 0 !important;
+}
+#nwp-progressbar .ui-widget-header {
+  background: #0073aa;
+}
+#nwp-progressbar-msg {
+  font-weight: 600;
+  text-shadow: 0px 1px 0px white;
+}
+.nwp-error,
+.nwp-warning {
+  font-weight: 600;
+  line-height: 1.5rem;
+  display: inline-block;
+  background: #fff2f2;
+  padding: 1rem !important;
+  border-left: 3px solid red;
+  margin-bottom: 1rem;
+}
+.nwp-warning {
+  background: #fffdeb;
+  border-left-color: #ffc107;
+}
+span.nwp-error,
+span.nwp-warning {
+  width: 100%;
+}
+p.nwp-error,
+p.nwp-warning {
+  margin: 1rem !important;
+}
+.form-table .wide {
+  min-width: 350px;
+}
+.form-table th .woocommerce-help-tip {
+  float: right;
+}
+.form-table th{
+  width: 350px !important;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.form-table th.nw-main-feature{
+  font-size: 18px;
+}
+
+.nw-settings-heading{
+  margin-bottom: 20px !important;
+  font-size: 25px !important;
+  letter-spacing: 1px !important;
+  font-weight: 500 !important;
+}
+
+.nw-tab-content {
+  display: none;
+}
+
+.nw-tab-content.active {
+  display:block;
+}
+
+.form-table tr.info td{
+  padding: 0px !important;
+}

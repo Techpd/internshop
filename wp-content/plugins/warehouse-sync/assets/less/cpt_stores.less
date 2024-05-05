@@ -1,0 +1,68 @@
+// out: ../css/admin_cpt_stores.css
+
+@import 'globals';
+
+// Admin columns
+.tablenav .bulkactions { display: none; }
+.hide_all_columns_on_mobile();
+th#shop_id { width: 120px; }
+th#parent { width: 12rem; }
+
+
+// Resets
+.clear_postbox();
+#submitdiv { display: none; }
+button.handlediv { display: none; }
+.hndle { display: none; }
+#post-body-content { display: none; }
+
+
+// Club logo, set placeholder-illustration below img
+// and force uploaded image to be shown as hard crop 150x150
+#postimagediv {
+	height: 215px;
+
+	&:before {
+		position: absolute;
+		width: 150px;
+		height: 150px;
+		content: '';
+		display: block;
+		background-size: 150px 150px;
+		border: 3px dashed grey;
+		box-sizing: border-box;
+	}
+
+	a.thickbox:not([aria-describedby]) {
+		margin-top: 165px;
+	}
+
+	#nw-club-logo .nw-input {
+		min-height: 240px;
+	}
+	#set-post-thumbnail img {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+#row-nw_status.disabled {
+	td {
+		display: flex;
+		span.deactivated {
+			font-style: italic;
+		  color: #adadad;
+			text-transform: lowercase;
+			margin-left: 10px;
+		}
+		.switch-button-label {
+			opacity: 0.5;
+			color: #adadad;
+		}
+	}
+}
+
+.select2-container {
+	margin-bottom: 10px;
+	margin-right: 20px;
+}

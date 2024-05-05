@@ -1,0 +1,98 @@
+div.nw-table-container {
+  min-height: 300px;
+  max-height: 600px;
+  overflow: scroll;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.tablenav .bulkactions {
+  display: none;
+}
+@media screen and (max-width: 782px) {
+  .wp-list-table td {
+    display: none !important;
+  }
+}
+th#shop_id {
+  width: 120px;
+}
+th#parent {
+  width: 12rem;
+}
+.postbox {
+  min-width: auto;
+  position: inherit;
+  background: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 0;
+  margin-bottom: 0;
+}
+.postbox button[type="button"].handlediv {
+  display: none;
+}
+.postbox div.inside {
+  padding: 0;
+  margin: 0;
+}
+.postbox div.inside p.submit {
+  float: left !important;
+  margin: 2rem 0 0 0 !important;
+  padding: 0 !important;
+}
+#submitdiv {
+  display: none;
+}
+button.handlediv {
+  display: none;
+}
+.hndle {
+  display: none;
+}
+#post-body-content {
+  display: none;
+}
+#postimagediv {
+  height: 215px;
+}
+#postimagediv:before {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  content: '';
+  display: block;
+  background-size: 150px 150px;
+  border: 3px dashed grey;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#postimagediv a.thickbox:not([aria-describedby]) {
+  margin-top: 165px;
+}
+#postimagediv #nw-club-logo .nw-input {
+  min-height: 240px;
+}
+#postimagediv #set-post-thumbnail img {
+  width: 150px;
+  height: 150px;
+}
+#row-nw_status.disabled td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#row-nw_status.disabled td span.deactivated {
+  font-style: italic;
+  color: #adadad;
+  text-transform: lowercase;
+  margin-left: 10px;
+}
+#row-nw_status.disabled td .switch-button-label {
+  opacity: 0.5;
+  color: #adadad;
+}
+.select2-container {
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+

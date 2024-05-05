@@ -1,0 +1,94 @@
+/*  ----- Product status ----- */
+.newwave-product-badge {
+  position: absolute;
+  z-index: 8;
+}
+.newwave-product-badge.date .badge-inner {
+  background: red;
+}
+.newwave-product-badge.expired .badge-inner {
+  background: grey;
+}
+.newwave-product-badge .badge-inner {
+  padding: 0.7em 0.5rem;
+  font-size: 0.85rem;
+}
+.newwave-product-notice {
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  color: white;
+}
+.newwave-product-notice.date {
+  background: red;
+}
+.newwave-product-notice.expired {
+  background: grey;
+}
+/*  ----- Returning of products ----- */
+section.newwave-return-registered .return-to-order {
+  margin-top: 2rem;
+}
+input.newwave-return-products-cb:disabled {
+  opacity: 0.4;
+}
+input.newwave-qty-input {
+  width: 3.5rem !important;
+  margin-left: 1rem;
+}
+/*  ----- Checkout address selection ----- */
+.newwave-shipping-address-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.newwave-shipping-address-box:hover,
+.newwave-shipping-address-box .text-box {
+  cursor: pointer;
+}
+.newwave-shipping-address-box input[type="radio"] {
+  margin-right: 2rem;
+}
+.newwave-shipping-address-box .incomplete-address {
+  color: red;
+}
+.newwave-shipping-address-box .incomplete-address a {
+  text-decoration: underline;
+}
+/*  ----- User shop switching ----- */
+.newwave-user-shops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.newwave-user-shops li {
+  margin-left: 0 !important;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ececec;
+}
+.newwave-user-shops li label {
+  font-size: 16px;
+}
+.newwave-user-shops li button {
+  margin-right: 0;
+}
+#newwave-register-code {
+  max-width: 150px;
+  margin-right: 1rem;
+}
+
+.junk-mail-text{
+  margin-bottom: 25px;
+}

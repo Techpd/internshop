@@ -1,0 +1,17 @@
+.nw-attribute-icons-dropdown li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.nw-attribute-icons-dropdown li img {
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 5px;
+}
+#nw-product-concept label {
+  margin: 0 0 0 0 !important;
+  float: none !important;
+}

@@ -1,0 +1,88 @@
+@red: #e63132;
+@red-border: #bd3333;
+@red-light: #ef3839;
+@red-shadow: #8a2323;
+
+@green: #46b450;
+@green-border: #418e48;
+@green-light: #2b6730;
+@green-shadow: #4fc159;
+
+@blue: #0085ba;
+@blue-border: #006799;
+
+.hide() { display: none; }
+
+.red_button() {
+	background: @red;
+	border-color: @red-border;
+	color: white;
+	box-shadow: 0 1px 0 @red-shadow;
+	text-shadow: 0 0 1px black;
+	&:hover { background: @red-light; }
+}
+
+.green_button() {
+	background: @green;
+	border-color: @green-border;
+	box-shadow: 0 1px 0 @green-light;
+	&:hover { background: @green-shadow; }
+}
+
+.blue_button() {
+	background: @blue !important;
+	border-color: @blue-border #006799 #006799 !important;
+	color: #fff;
+	text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+	box-shadow: 0 1px 0 #006799;
+}
+
+
+// Clear styles of the .postbox surrounding custom meta boxes
+.clear_postbox() {
+	.postbox {
+	min-width: auto;
+	position: inherit;
+	background: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border: 0;
+	margin-bottom: 0;
+
+	button[type="button"].handlediv { display: none; }
+
+	div.inside {
+		padding: 0;
+		margin: 0;
+
+		p.submit {
+			float: left !important;
+			margin: 2rem 0 0 0 !important;
+			padding: 0 !important;
+		}
+	}
+	}
+}
+
+// Enable all admin columns to be visible on smaller screens
+.hide_all_columns_on_mobile() {
+	@media screen and (max-width: 782px) {
+		.wp-list-table td { display: none !important; }
+	}
+}
+.show_admin_column_on_mobile(@cell) {
+	@media screen and (max-width: 782px) {
+		.wp-list-table td.@{cell}  {
+			display: table-cell !important;
+			&:before { display: none !important; }
+		}
+	}
+}
+
+div.nw-table-container {
+	min-height: 300px;
+	max-height: 600px;
+	overflow: scroll;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}

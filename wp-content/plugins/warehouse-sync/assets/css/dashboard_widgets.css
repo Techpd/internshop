@@ -1,0 +1,104 @@
+div.nw-table-container {
+  min-height: 300px;
+  max-height: 600px;
+  overflow: scroll;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+#nw_vendor_sales span.no-sales,
+#nw_club_sales span.no-sales {
+  display: block;
+  margin: 1rem;
+}
+#nw_vendor_sales div.inside,
+#nw_club_sales div.inside {
+  margin: 0;
+  padding: 0;
+}
+#nw_vendor_sales div.inside ul,
+#nw_club_sales div.inside ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#nw_vendor_sales div.inside ul li,
+#nw_club_sales div.inside ul li {
+  margin: 0;
+}
+#nw_vendor_sales div.inside ul li:not(:first-child),
+#nw_club_sales div.inside ul li:not(:first-child) {
+  border-top: 1px solid #ececec;
+}
+#nw_vendor_sales div.inside ul a,
+#nw_club_sales div.inside ul a {
+  padding: 9px 12px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#nw_vendor_sales div.inside ul a strong,
+#nw_club_sales div.inside ul a strong {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 7px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 15px;
+  line-height: 1.2em;
+  font-weight: 400;
+  display: block;
+  color: #21759b;
+}
+#nw_vendor_sales div.inside ul a strong span.number,
+#nw_club_sales div.inside ul a strong span.number {
+  width: 26px;
+  height: 26px;
+  display: block;
+  border-radius: 13px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 24px;
+  margin-right: 10px;
+  float: left;
+  color: white;
+  background: #a3a3a3;
+}
+#nw_vendor_sales div.inside ul a strong span.underline,
+#nw_club_sales div.inside ul a strong span.underline {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+#nw_vendor_sales div.inside ul a:hover,
+#nw_club_sales div.inside ul a:hover {
+  color: #2ea2cc;
+}
+#nw_vendor_sales div.inside ul a div.price,
+#nw_club_sales div.inside ul a div.price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#nw_vendor_sales div.inside ul a div.price .amount,
+#nw_club_sales div.inside ul a div.price .amount {
+  font-size: 18px;
+  margin-right: 10px;
+}
+#nw_vendor_sales div.inside ul a div.price .wc_sparkline,
+#nw_club_sales div.inside ul a div.price .wc_sparkline {
+  float: right;
+  width: 55px;
+  height: 35px;
+  display: block;
+}
