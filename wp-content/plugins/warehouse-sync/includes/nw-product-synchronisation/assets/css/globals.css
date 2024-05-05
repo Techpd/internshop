@@ -1,7 +1,0 @@
-div.nw-table-container {
-    min-height: 300px;
-    max-height: 600px;
-    overflow: scroll;
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}  

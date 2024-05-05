@@ -1,2 +1,0 @@
-# nshift-php-client
- Nshift 
