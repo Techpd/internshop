@@ -1592,8 +1592,10 @@ var color_selection_by_default = 0;
 				success: function (response) {
 					//                // console.log(response.data);
 					if (!response.error) {
-						jQuery(".product-gallery .slider-wrapper").html(response.data).fadeIn(500);
+						// jQuery(".product-gallery .slider-wrapper").html(response.data).fadeIn(500);
+						$(".product-gallery .slider-wrapper").fadeOut().html(response.data).fadeIn(300)
 
+						// for image zoom if variant change
 						$('.easyzoom').easyZoom();
 					}
 				},

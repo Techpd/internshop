@@ -460,7 +460,7 @@ if ($product->get_type() == 'gift-card') {
                             {
                                 breakpoint: 480,
                                 settings: {
-                                    slidesToShow: 3,
+                                    slidesToShow: 2,
                                 }
                             }
                         ]
