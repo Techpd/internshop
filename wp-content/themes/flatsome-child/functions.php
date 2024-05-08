@@ -1,13 +1,14 @@
 ﻿<?php
 function new_home_styles()
 {
+    // styles
     wp_enqueue_style('home_slick_css', get_stylesheet_directory_uri() . '/css/slick.css', false, time());
     wp_enqueue_script('home_slick_js', get_stylesheet_directory_uri() . '/js/slick.min.js', false, '1.0.0');
     wp_enqueue_style('magnific_popup_css', get_stylesheet_directory_uri() . '/css/magnific-popup.css', false, '1.0.0');
     wp_enqueue_style('mCustomScrollbar_css', get_stylesheet_directory_uri() . '/css/mCustomScrollbar.css', false, '1.0.0');
-    wp_enqueue_style('product-gallery_css', get_stylesheet_directory_uri() . '/css/single-product_gallery.css', false, time());
+    wp_enqueue_style('home_styles', get_stylesheet_directory_uri() . '/css/theme-styles.css', false, time());
 
-    wp_enqueue_style('home_styles', get_stylesheet_directory_uri() . '/home-2.0-styles.css', false, time());
+    // scripts
     wp_enqueue_script('magnific_popup_js', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.min.js', false, '1.0.0');
     wp_enqueue_script('easyzoom_js', get_stylesheet_directory_uri() . '/js/easyzoom.js', false, '1.0.0');
     wp_enqueue_script('mCustomScrollBar_js', get_stylesheet_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', false, '1.0.0');
