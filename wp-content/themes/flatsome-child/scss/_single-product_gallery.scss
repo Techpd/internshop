@@ -24,7 +24,9 @@
             right: 0;
             left: auto;
         }
+
         .images {
+            display: none;
             width: 100%;
             position: relative;
             a {
@@ -43,6 +45,11 @@
                 .slider-for {
                     margin-inline: 10px;
                     margin-bottom: 10px;
+
+                    .item a{
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
                 .item-inner {
                     a {
@@ -73,6 +80,7 @@
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
+                                // width: 25% !important;
                                 // background-color: #f0f0f0;
                                 .item-img {
                                     width: 93px;
@@ -82,6 +90,10 @@
                                     background-size: cover;
                                     opacity: 0.5;
                                     // mix-blend-mode: multiply;
+                                    @media (max-width: 768px) {
+                                        width: 73px;
+                                        height: 73px;
+                                    }
                                 }
 
                                 &.slick-active {
@@ -112,6 +124,10 @@
                             width: 20px;
                             height: 20px;
                             margin-block: 0;
+                        }
+
+                        @media (max-width: 991px) {
+                            opacity: 1;
                         }
                     }
                 }
@@ -145,6 +161,63 @@
                         opacity: 1;
                         transform: translate(0, -50%);
                     }
+                }
+            }
+        }
+
+        .woocommerce-variation.single_variation {
+            height: 25px !important;
+            display: block !important;
+        }
+
+        .wc-no-matching-variations.woocommerce-info {
+            display: none !important;
+        }
+
+        .mfp-arrow {
+            &.mfp-arrow-left,
+            &.mfp-arrow-right {
+                background: 0 0;
+                top: 50%;
+                margin-top: -50px;
+                width: 70px;
+                height: 100px;
+                position: absolute;
+                padding: 0 1.2em;
+                &::before {
+                    content: "";
+                    top: 35px;
+                    height: 30px;
+                    width: 32px;
+                    display: inline-block;
+                    position: absolute;
+                    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBQcm8gNi41LjIgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UgKENvbW1lcmNpYWwgTGljZW5zZSkgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTQ0MC42IDI3My40YzQuNy00LjUgNy40LTEwLjggNy40LTE3LjRzLTIuNy0xMi44LTcuNC0xNy40bC0xNzYtMTY4Yy05LjYtOS4yLTI0LjgtOC44LTMzLjkgLjhzLTguOCAyNC44IC44IDMzLjlMMzY0LjEgMjMyIDI0IDIzMmMtMTMuMyAwLTI0IDEwLjctMjQgMjRzMTAuNyAyNCAyNCAyNGwzNDAuMSAwTDIzMS40IDQwNi42Yy05LjYgOS4yLTkuOSAyNC4zLS44IDMzLjlzMjQuMyA5LjkgMzMuOSAuOGwxNzYtMTY4eiIvPjwvc3ZnPg==")
+                        0 0 no-repeat;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    border: none;
+                    margin: 0;
+                    opacity: 1;
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &.mfp-arrow-right {
+                right: 0;
+                &::before {
+                    right: 6px;
+                    // background-position: -94px -44px;
+                }
+            }
+
+            &.mfp-arrow-left {
+                left: 0;
+                &::before {
+                    left: 6px;
+                    transform: rotate(180deg);
                 }
             }
         }
@@ -183,17 +256,17 @@
 }
 
 /* Shrink wrap strategy 1 */
-.easyzoom {
-    float: left;
-}
-.easyzoom img {
-    display: block;
-}
+// .easyzoom {
+//     float: left;
+// }
+// .easyzoom img {
+//     display: block;
+// }
 
 /* Shrink wrap strategy 2 */
-.easyzoom {
-    display: inline-block;
-}
-.easyzoom img {
-    vertical-align: bottom;
-}
+// .easyzoom {
+//     display: inline-block;
+// }
+// .easyzoom img {
+//     vertical-align: bottom;
+// }

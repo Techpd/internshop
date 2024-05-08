@@ -110,22 +110,30 @@ if ($product->get_type() == 'gift-card') {
 
                         // sort colors by name
                         sort($available_colors);
-                        $selected_color = $available_colors[0];
+
+                        $terms = wc_get_product_terms($product->get_id(), 'pa_color', array('fields' => 'all'));
+                        $slugs = array_map(function ($term) {
+                            return $term->slug;
+                        }, $terms);
+
+                        if (isset($slugs[0]) && in_array($slugs[0], $available_colors)) {
+                            $selected_color = $slugs[0];
+                        } else {
+                            $selected_color = $available_colors[0];
+                        }
                     }
                 }
 
                 $i_count = 0;
                 $attachment_ids = $product->get_gallery_image_ids();
                 $color_images = nw_get_color_attribute_images($product->get_id());
-                //        display_r($product->get_id(), 'pr', false);
-                //        display_r(get_post_meta($product->get_id(), 'nw_color_attribute_images', true), 'pr', false);
                 $variations = array();
                 if ($product->is_type('variable')) {
                     $variations = $product->get_available_variations();
                     $variations = array_reverse($variations);
                 }
 
-                if ($product->is_type('variable')) {
+                if ($product->is_type('variable') && get_post_meta($product->get_id(), '_show_slick_slider_gallery', true) == 1) {
                     $attachment_ids = array();
                     if (have_rows('color_variants_gallery')) {
                         while (have_rows('color_variants_gallery')) {
@@ -141,15 +149,12 @@ if ($product->get_type() == 'gift-card') {
                                     break;
                                 }
                             }
-                            //                    display_r($product_color);
-                            //                    display_r($color_gallery);
                         }
-                    }else{
+                    } else {
                         $attachment_ids = $product->get_gallery_image_ids();
                     }
                 }
 
-                //        display_r($attachment_ids, 'pr', false);
                 $attachment_count = count($attachment_ids);
                 if (has_post_thumbnail()) {
                     $i_count++;
@@ -217,22 +222,6 @@ if ($product->get_type() == 'gift-card') {
                                 echo '</div>';
                                 echo '</div>';
 
-                                /*
-                                // displaying color variations
-                                foreach ($thumb_vars_full as $thumb_var) {
-                                    
-                                    $img_disp_flag = '';
-                                    if (!empty($is_color_selected) && $is_color_selected != $thumb_var['attributes']['attribute_pa_color']) {
-                                        $img_disp_flag = 'display:none;';
-                                        continue;
-                                    }
-        
-                                    $img = $thumb_var['image']['full_src'];
-                                    echo '<div class="item"><a href="' . $img . '" class="mfp-image img-mfp" data-rel="prettyPhoto"><img class="img-responsive " src="' . $img . '"></a></div>';
-                                }
-                                 * 
-                                 */
-
                                 foreach ($attachment_ids as $attachment_id) {
                                     $img = wp_get_attachment_url($attachment_id);
                                     echo '<div class="item easyzoom"><a href="' . $img . '" class="mfp-image img-mfp-new" data-rel="prettyPhoto"><img class="img-responsive " src="' . $img . '"></a></div>';
@@ -288,30 +277,10 @@ if ($product->get_type() == 'gift-card') {
                     <div class="slider-nav">
                         <?php
                         $i_count = 0;
-                        //                $attachment_ids = $product->get_gallery_image_ids();
-                        //                $attachment_count = count($attachment_ids);
 
                         if (has_post_thumbnail()) {
                             $i_count++;
                         }
-
-                        /*
-                        // $is_color_selected = false;
-                        if ($product->is_type('variable')) {
-                            $thumb_vars = array();
-                            foreach ($variations as $variation) {
-                                if (array_key_exists($variation['attributes']['attribute_pa_color'], $color_images)) {
-                                    $thumb_vars[$variation['attributes']['attribute_pa_color']] = $variation;
-                                    $i_count++;
-        
-                                    // 			if(!empty($_GET['attribute_pa_color']) && $_GET['attribute_pa_color']==$variation['attributes']['attribute_pa_color']) {
-                                    // 				$is_color_selected = $variation['attributes']['attribute_pa_color'];
-                                    // 			}
-                                }
-                            }
-                        }
-                         * 
-                         */
 
                         if (($attachment_count + $i_count) > 1) {
                             $loop = 0;
@@ -374,55 +343,17 @@ if ($product->get_type() == 'gift-card') {
                                 ?>
                                     <div class="item">
                                         <?php
-                                        //                                $classes = array();
-                                        //
-                                        //                                if ($loop === 0 || $loop % $columns === 0)
-                                        //                                    $classes[] = 'first';
-                                        //
-                                        //                                if (( $loop + 1 ) % $columns === 0)
-                                        //                                    $classes[] = 'last';
-
                                         $image_link = wp_get_attachment_url($attachment_id);
 
                                         if (!$image_link)
                                             continue;
 
-                                        //                                $image_title = esc_attr(get_the_title($attachment_id));
-                                        //                                $image_caption = esc_attr(get_post_field('post_excerpt', $attachment_id));
-                                        //
-                                        //                                $image = wp_get_attachment_image($attachment_id, apply_filters('single_product_small_thumbnail_size', 'full'), 0, $attr = array(
-                                        //                                    'title' => $image_title,
-                                        //                                    'alt' => $image_title
-                                        //                                ));
-
-                                        // Commented because not used - php warning on implode since $classes not defined
-                                        // $image_class = esc_attr(implode(' ', $classes));
                                         echo '<div class="item-img img-2-new" style="background-image: url(' . $image_link . ')"></div>';
-
-                                        //                                $loop++;
                                         ?>
                                     </div>
                         <?php
                                 }
                             }
-
-                            /*
-                            if ($product->is_type('variable')) {
-                                // displaying color variations
-                                foreach ($thumb_vars as $thumb_key => $thumb_var) {
-        
-                                    $img_disp_flag = '';
-                                    if (!empty($is_color_selected) && $is_color_selected != $thumb_var['attributes']['attribute_pa_color']) {
-                                        $img_disp_flag = 'display:none;';
-                                        continue;
-                                    }
-        
-                                    $img = $thumb_var['image']['full_src'];
-                                    echo '<div class="item" style="' . $img_disp_flag . '"><div class="item-img img-3" style="background-image: url(' . $img . ');"></div></div><hr>';
-                                }
-                            }
-                             * 
-                             */
                         }
                         ?>
                     </div>
@@ -456,49 +387,49 @@ if ($product->get_type() == 'gift-card') {
                     speed: 500, // Animation speed
                     cssEase: 'ease', // CSS easing for the free mode effect
                     // vertical: true,
+                    arrows: true,
                     infinite: false,
                     focusOnSelect: true,
                     swipe: true,
-                    responsive: [{
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 3,
-                        }
-                    }]
+                    responsive: [
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 3,
+                            }
+                        },
+                        {
+                            breakpoint: 650,
+                            settings: {
+                                slidesToShow: 4,
+                            }
+                        },
+                        {
+                            breakpoint: 849,
+                            settings: {
+                                slidesToShow: 6,
+                            }
+                        },
+                    ]
                 });
 
-                if (jQuery(window).width() > 767) {
-                    jQuery('.single_thumb_wrap ').magnificPopup({
-                        delegate: 'a',
-                        type: 'image',
-                        gallery: {
-                            enabled: true,
-                        },
-                    });
-                } else {
-                    jQuery('.single_thumb_wrap a').click(function(e) {
-                        e.preventDefault();
-                    });
-                }
-
-                /*** End Old Code ***/
-
-                //            jQuery(document).on('click', '.custom_var_wrap[name="attribute_pa_color"] label', function () {
-                //                var bg = jQuery(this).find(".dd").css('background-image');
-                //                var bg_image = bg.replace('url(', '').replace(')', '').replace(/\"/gi, "");
-                //                console.log('clicked');
-                //                jQuery('.slider-nav .slick-track .item .item-img').each(function () {
-                //                    var slider_bg = jQuery(this).css('background-image');
-                //                    var slider_bg_image = slider_bg.replace('url(', '').replace(')', '').replace(/\"/gi, "");
-                //                    if (bg_image === slider_bg_image) {
-                //                        slideno = jQuery(this).parent().data('slick-index');
-                //                        if (slideno >= 0) {
-                //                            jQuery('.slider-nav .slick-slide[data-slick-index="' + slideno + '"] .item-img').trigger('click');
-                //                        }
-                //
-                //                    }
-                //                });
-                //            });
+                $('.slider-for .item').magnificPopup({
+                    delegate: 'a',
+                    type: 'image',
+                    tLoading: 'Loading image #%curr%...',
+                    mainClass: 'mfp-img-mobile',
+                    gallery: {
+                        enabled: true,
+                        navigateByImgClick: true,
+                        preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+                    },
+                    image: {
+                        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                        // titleSrc: function(item) {
+                        // 	return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+                        // }
+                    }
+                });
             });
         </script>
     </div>

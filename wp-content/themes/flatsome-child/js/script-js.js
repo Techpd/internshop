@@ -877,20 +877,21 @@ var color_selection_by_default = 0;
 				var params = getAllUrlParams();
 				var colorInput = $(this);
 				// Commented so size is not selected by default
-				/* setTimeout(function() {
-						// If color selected is the same as the URL pa_color parameter, and a URL parameter pa_size is specified, select that size
-						if (colorInput.val() == params.attribute_pa_color && params.attribute_pa_size != undefined) {
-							jQuery('div[name="attribute_pa_size"] label:not(.inactive) input[value="'+params.attribute_pa_size+'"]').first().click().trigger('change');
-						}
-						// If no active inputs are available, deselect any previously selected pa_size options
-						else if (jQuery('div[name="attribute_pa_size"] label:not(.inactive)').length == 0) {
-							jQuery('input[name="attribute_pa_size"]:checked').prop('checked', false);
-						}
-						// Select the first available pa_size attribute
-						else {
-							jQuery('div[name="attribute_pa_size"] label:not(.inactive) input[type="radio"]').first().click().trigger('change');
-						}
-					}, 50); */
+				setTimeout(function () {
+					// If color selected is the same as the URL pa_color parameter, and a URL parameter pa_size is specified, select that size
+					if (colorInput.val() == params.attribute_pa_color && params.attribute_pa_size != undefined) {
+						jQuery('div[name="attribute_pa_size"] label:not(.inactive) input[value="' + params.attribute_pa_size + '"]').first().click().trigger('change');
+					}
+					// If no active inputs are available, deselect any previously selected pa_size options
+					else if (jQuery('div[name="attribute_pa_size"] label:not(.inactive)').length == 0) {
+						jQuery('input[name="attribute_pa_size"]:checked').prop('checked', false);
+					}
+					// Select the first available pa_size attribute
+					else {
+						jQuery('div[name="attribute_pa_size"] label:not(.inactive) input[type="radio"]').first().click().trigger('click');
+						// $('.wc-no-matching-variations.woocommerce-info').fadeOut().fadeIn(300);
+					}
+				}, 50);
 			}
 		);
 
@@ -920,8 +921,10 @@ var color_selection_by_default = 0;
 						"selected"
 					);
 				}
+				$('.easyzoom').easyZoom();
 			}
 		);
+		$('.slider-wrapper .images').fadeIn('200');
 
 		// Update inactive options when a variation option is selected
 		jQuery(document).on("woocommerce_update_variation_values", function () {
@@ -1580,6 +1583,7 @@ var color_selection_by_default = 0;
 			// }
 			post_id = jQuery("form.variations_form.cart").data("product_id");
 			// console.log(post_id);
+			$('.slider-wrapper .images').fadeIn('200');
 			jQuery.ajax({
 				type: "post",
 				dataType: "json",
@@ -1593,7 +1597,8 @@ var color_selection_by_default = 0;
 					//                // console.log(response.data);
 					if (!response.error) {
 						// jQuery(".product-gallery .slider-wrapper").html(response.data).fadeIn(500);
-						$(".product-gallery .slider-wrapper").fadeOut().html(response.data).fadeIn(300)
+						$(".product-gallery .slider-wrapper").html(response.data);
+						$('.slider-wrapper .images').fadeIn('200');
 
 						// for image zoom if variant change
 						$('.easyzoom').easyZoom();
