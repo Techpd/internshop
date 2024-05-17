@@ -1,6 +1,7 @@
 #header .header-wrapper {
   max-width: 1366px;
   margin: auto;
+  /* Temporarily hiding the login button at home page as per instruction from client*/
 }
 #header .header-wrapper .menu-item,
 #header .header-wrapper .account-item {
@@ -29,6 +30,9 @@
 #header .header-wrapper.is_logged_in .menu-item,
 #header .header-wrapper.is_logged_in .account-item {
   display: block;
+}
+#header .header-wrapper .header-button-1 {
+  display: none !important;
 }
 
 .slick-arrow {
@@ -2481,6 +2485,7 @@ main .category-page-row .dealer-name-phone .dealer-email a:hover {
   padding: 0;
 }
 .product-container .content-row .single_variation_wrap .woocommerce-variation-add-to-cart .storeguide_wrap {
+  display: none;
   padding-bottom: 10px;
 }
 .product-container .content-row .single_variation_wrap .woocommerce-variation-add-to-cart .storeguide_wrap a img {
@@ -3413,10 +3418,16 @@ main .category-page-row .dealer-name-phone .dealer-email a:hover {
   }
 }
 
-.variations_form.cart {
+.newwave-sale-date {
   -webkit-box-ordinal-group: 7;
       -ms-flex-order: 6;
           order: 6;
+}
+
+.variations_form.cart {
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
   margin-top: 10px;
 }
 
@@ -4007,9 +4018,6 @@ a:hover {
   clear: unset;
   content: unset;
   display: table;
-}
-.woocommerce.single-product .woocommerce-message {
-  display: none;
 }
 .woocommerce.single-product .shop-container {
   max-width: 1366px;

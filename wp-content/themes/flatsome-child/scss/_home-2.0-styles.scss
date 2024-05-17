@@ -38,6 +38,10 @@
         display: block;
       }
     }
+    /* Temporarily hiding the login button at home page as per instruction from client*/
+    .header-button-1 {
+      display: none !important;
+    }
   }
 }
 
@@ -2696,6 +2700,7 @@ main .category-page-row {
       .woocommerce-variation-add-to-cart {
         padding: 0;
         .storeguide_wrap {
+          display: none;
           padding-bottom: 10px;
           a {
             img {
@@ -3748,8 +3753,12 @@ main .category-page-row {
   }
 }
 
-.variations_form.cart {
+.newwave-sale-date{
   order: 6;
+}
+
+.variations_form.cart {
+  order: 7;
   margin-top: 10px;
 }
 
